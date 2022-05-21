@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="<%= request.getContextPath() %>/resource/css/icon/css/all.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 
-<title>Insert title here</title>
+<title>회원 목록</title>
 </head>
 <body>
   <b:navBar></b:navBar>
@@ -29,7 +29,6 @@
           <thead>
             <tr>
               <th>아이디</th>
-              <th>패스워드</th>
               <th>닉네임</th> 
               <th>이메일</th>
               <th>주소</th>
@@ -41,11 +40,10 @@
             <c:forEach items="${memberList }" var="member">
               <tr>
                 <td>${member.id }</td>
-                <td><c:out value="${member.password }" /></td>
                 <td><c:out value="${member.nickName }" /></td>
                 <td><c:out value="${member.email }" /></td>
                 <td><c:out value="${member.address }" /></td>
-                <td>${member.inserted }</td>
+                <td>${member.customInserted }</td>
                 <td>${member.numberOfBoard }</td>                     
               </tr>
             </c:forEach>
